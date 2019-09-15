@@ -1,0 +1,447 @@
+lambda
+ anonymous function in python
+
+
+def fun(g):
+	return g*g*g
+print(fun(5))
+   OR
+d=lambda x:x*x*x
+print(d(5))
+
+
+####  filter
+l1=[5,7,22,6]
+l2=list(filter(lambda x:(x%2==0),l1))
+print(l2)
+o/p
+[22, 6]
+
+####   map
+l1=[5,7,22,6]
+l2=list(map(lambda x:x*2,l1))
+print(l2)
+o/p
+[10, 14, 44, 12]
+
+###    reduce
+from functools import reduce
+l1=[2,5,4,8,9]
+l2=reduce((lambda x,y:x+y),l1)
+print(l2)	#sum of thelist element
+
+o/p
+28
+
+
+####   Tuple
+
+t1=()  #empty tuple
+print(t1)
+t2=('gt','ht')
+print(t2)
+t3=(1,5)
+print(t3+t2) #concatenation of two tuple
+t4=(t3,t2)   #merge of two tuple in one tuple
+print(t4)
+t5=('python ')*3  #repetation of tuple
+o/p
+()
+('gt', 'ht')
+(1, 5, 'gt', 'ht')
+((1, 5), ('gt', 'ht'))
+python python python
+
+# slicing of tuple
+t6=(0,1,2,3,4,5,6)
+print(t6[1:])
+print(t6[::-1])
+print(t6[2:5])
+print(t6[:4])
+o/p
+(1, 2, 3, 4, 5, 6)
+(6, 5, 4, 3, 2, 1, 0)
+(2, 3, 4)
+(0, 1, 2, 3)
+
+
+# tuples are immutable
+t1=(1,2,6)
+t1[0]=5
+print(t1)
+
+o/p
+t1[0]=5
+TypeError: 'tuple' object does not support item assignment
+
+# delete a tuple
+t1=(1,2,6)
+print(t1)
+del t1
+# find length of tuple
+t2=('python','c','java')
+print(len(t2))
+#convert list into tuple
+l1=[2,8,5,6]
+print(tuple(l1))
+#convert string into tuple
+print(tuple('python'))
+
+o/p
+(1, 2, 6)
+3
+(2, 8, 5, 6)
+('p', 'y', 't', 'h', 'o', 'n')
+
+#tuple using loop
+t1=('python')
+n=3
+for i in range(n):
+    t1=(t1,)
+    print(t1)
+
+o/p
+('python',)
+(('python',),)
+((('python',),),)
+
+#comparision of tuples
+t1=(2,5,6,3,8,7,11)
+t2=(2,5,8)
+if t1==t2:
+    print('same')
+else:
+    print('not same')
+#maximum
+print('maximum element in a tuple '+str(max(t1)))
+#minimum
+print('minimum element in a tuple '+str(min(t1)))
+
+o/p
+not same
+maximum element in a tuple 11
+minimum element in a tuple 2
+
+##  write a program to add an element in an existing tuple
+
+l1=[]
+n=int(input('Enter how many element in tuple'))
+for i in range(n):
+    a=int(input())
+    l1.append(a)
+print(tuple(l1))
+
+###  write a program to return the number of times an element has appeared in tuple
+
+
+###  write a program to remove an element from tuple
+
+t1=(2,1,3,5,1,6,9,1)
+l1=list(t1)
+l1.remove(5)
+t2=tuple(l1)
+print(t2)
+o/p
+(2, 1, 3, 1, 6, 9, 1)
+
+####  write a program to create a dictionary from tuples
+t1=('r',1)
+t2=('e',2)
+t1=('r',1)
+t2=('e',2)
+t3=(t1,t2)
+dict1=(dict((x,y) for x,y in t3))
+print(dict1)
+o/p
+dict1={'r':1,'e':2}
+
+
+
+####   SET
+
+sets are iterable,mutable and no duplicate
+
+but Frozensets are immutable
+
+normal=set(['a','b','c'])
+print(normal)
+frozen=frozenset(['a','b','c'])
+print(frozen)
+#add new element
+normal.add('d')
+print(normal)
+o/p
+{'b', 'c', 'a'}
+frozenset({'b', 'c', 'a'})
+{'b', 'd', 'c', 'a'}
+
+frozen.add('e')
+print(frozen)
+o/p
+AttributeError: 'frozenset' object has no attribute 'add'
+
+####union
+p={'jay','kamal'}
+v={'ghdh','usgf','hgdjh'}
+u=v.union(p)
+print(u)
+o/p
+{'kamal', 'jay', 'ghdh', 'usgf', 'hgdjh'}
+
+
+## intersection
+p={'jay','kamal','joy'}
+v={'ghdh','usgf','hgdjh','jay'}
+u=v.intersection(p)
+print(u)
+o/p
+{'jay'}
+
+### difference
+p={'jay','kamal','joy'}
+v={'ghdh','usgf','hgdjh','jay'}
+u=v.difference(p)
+print(u)
+o/p
+{'hgdjh', 'ghdh', 'usgf'}
+
+###clear
+v.clear()
+
+p={'jay','kamal','joy'}
+v={'ghdh','usgf','hgdjh','jay'}
+v.clear()
+print(v)
+o/p
+set()
+
+#create an empty set
+set1=set()
+#add in empty set
+for i in range(1,9):
+    set1.add(i)
+print(set1)
+o/p
+{1, 2, 3, 4, 5, 6, 7, 8}
+
+#union
+set1=set([1,5,6,8])
+set2=set([8,7,6])
+set3=set1 | set2
+print(set3)
+#intersection
+set4=set1 & set2
+print(set4)
+#check relation
+if set1>set2:
+    print(str(set1)+' is greater than'+str(set2))
+else:
+    print(str(set1)+' is lesser than'+str(set2))
+#difference
+set5=set1-set2
+print(set5)
+
+o/p
+{1, 5, 6, 7, 8}
+{8, 6}
+{8, 1, 5, 6} is lesser than{8, 6, 7}
+{1, 5}
+
+### PYTHON BUILT IN FUNCTION
+
+
+##abs()
+  absulute value of a number
+ abs(7)
+ abs(-7)
+
+
+
+
+####************########
+
+Class -- is an entity
+Object--is representation of class
+
+class srp:
+    x=5
+s1=srp()
+print(s1.x)
+o/p
+5
+
+
+class srp:
+    x=5
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+s1 = srp('john',36)
+print(s1.x)
+print(s1.name)
+print(s1.age)
+
+o/p
+5
+john
+36
+
+
+class srp:
+    def __init__(self,f,l):
+        self.f=f
+        self.l=l
+    def srpfun(self):
+        self.f=self.f+ self.l
+        print(self.f)
+x = srp(2,3)
+x.srpfun()
+o/p
+5
+
+
+class srp:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def srpfun(self):
+        print('Hey my name is ',self.name,'and age is ',self.age)
+s1 = srp('john',36)
+s1.srpfun()   #calls the user defined
+o/p
+Hey my name is  john and age is  36
+
+
+
+write a python program to implement pow(x,n) using class and user function
+
+class power:
+    def __init__(self,x,n):
+        self.x=x
+        self.n=n
+    def srpfun(self):
+        print(pow(self.x,self.n))
+s1 = power(4,5)
+s1.srpfun()
+
+o/p
+1024
+
+
+###   Inheritance
+
+parent class
+child class
+
+class person:
+    def __init__(self,f,l):
+        self.f=f
+        self.l=l
+    def printname(self):
+        self.f=self.f+ self.l
+        print(self.f)
+class student(person):   
+    pass     
+x = student(5,3)
+x.printname()
+o/p
+8
+
+
+
+class person:
+    def __init__(self,fname,lname):
+        self.firstname=fname
+        self.lastname=lname
+    def printname(self):
+        print(self.firstname,self.lastname)
+class student(person):
+    def __init__(self,fname,lname,year):
+        super().__init__(fname,lname) #super function is use to call parent function directly to child function
+        self.graduationyear=year
+    def welcome(self):
+        print('welcome',self.firstname,self.lastname,'to the class of ',self.graduationyear)
+
+x= student('Satish Kumar','Singh',2022)
+x.printname()
+x.welcome()
+
+o/p
+
+Satish Kumar Singh
+welcome Satish Kumar Singh to the class of  2022
+
+
+###  more than 1 parent class child class 1 
+
+
+class parent:
+    def sum(self,a,b):
+        return a+b
+class parent2:
+    def multi(self,a,b):
+        return a*b
+class derived(parent,parent2):
+    def divide(self,a,b):
+        return a/b
+d=derived()
+print(d.sum(10,20))
+print(d.multi(10,20))
+print(d.divide(10,20))
+o/p
+30
+200
+0.5
+
+
+@###   write a program which has 2 methods get and put , where get accepts 
+astring from user and put prints the string in uppercase.
+
+
+
+@####   write a python class named shape which will be derived to create circle
+,square and give their corresponding area output.
+i.e shape will have variable inputs , circle and square will use those 
+variable by inheritance
+
+
+# method overriding(methods of same name inherited from parent to child, but perform
+individual job for different class)
+
+class parent:
+    def getvalue(self):
+        return 100
+class child(parent):
+    def getvalue(self):
+        return 90
+class grandchild(child):
+    def getvalue(self):
+        return 70
+d=parent()
+d2=child()
+d3=grandchild()
+print(d.getvalue())
+print(d2.getvalue())
+print(d3.getvalue())
+
+
+import tkinter
+top=tkinter.Tk()
+top.mainloop()
+top.title('counting seconds')
+button=tkinter.Button(top,txt='stop',width=25,
+command=top.destroy)
+button.pack()
+top.mainloop()
+
+
+
+from tkinter import *
+master= Tk()
+Label(master,text='first name').grid(row=0)
+Label(master,text='last name').grid(row=1)
+e1=Entry(master)
+e2=Entry(master)
+e1.grid(row=0,column=1)
+e2.grid(row=1,column=1)
+mainloop()

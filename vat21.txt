@@ -1,0 +1,415 @@
+import tkinter
+top=tkinter.Tk()
+top.mainloop()
+top.title('counting seconds')
+button=tkinter.Button(top,txt='stop',width=25,
+command=top.destroy)
+button.pack()
+top.mainloop()
+
+###
+
+from tkinter import *
+master= Tk()
+Label(master,text='first name').grid(row=0)
+Label(master,text='last name').grid(row=1)
+e1=Entry(master)
+e2=Entry(master)
+e1.grid(row=0,column=1)
+e2.grid(row=1,column=1)
+mainloop()
+
+
+###  Drawing in GUI
+
+import tkinter
+top = tkinter.Tk()
+canv = tkinter.Canvas(top,bg='blue',height=250,width=300)
+coord= 10,50,240,210
+arc=canv.create_arc(coord,start=0,extent=150,fill='red')
+canv.pack()
+top.mainloop()
+
+#checkbox
+from tkinter import *
+import tkinter
+top=tkinter.Tk()
+CheckVar1=IntVar()
+C1=Checkbutton(top,text='Music',variable=CheckVar1,onvalue=1,offvalue=0,height=5,width=20)
+CheckVar2=IntVar()
+C2=Checkbutton(top,text='Video',variable=CheckVar2,onvalue=1,offvalue=0,height=5,width=20)
+C1.pack()
+C2.pack()
+top.mainloop()
+
+
+#Textbox
+from tkinter import *
+import tkinter
+top=tkinter.Tk()
+L1=Label(top,text='User Name')
+L1.pack(side=LEFT)
+E1=Entry(top,bd=5)
+E1.pack(side=RIGHT)
+top.mainloop()
+
+
+#Listbox
+from tkinter import *
+import tkinter
+top=tkinter.Tk()
+Lb1=Listbox(top)
+Lb1.insert(1,'Python')
+Lb1.insert(2,'Perl')
+Lb1.insert(3,'C')
+Lb1.insert(4,'PHP')
+Lb1.insert(5,'JSP')
+Lb1.insert(6,'Ruby')
+Lb1.pack()
+top.mainloop()
+
+#Radiobutton/Option button
+from tkinter import *
+def sel():
+    selection='You selected the option'+str(var.get())
+    label.config(text=selection)
+root=Tk()
+var=IntVar()
+R1=Radiobutton(root,text='Option 1',variable=var,value=1,command=sel)
+R1.pack(anchor=W)
+R2=Radiobutton(root,text='Option 2',variable=var,value=2,command=sel)
+R2.pack(anchor=W)
+R3=Radiobutton(root,text='Option 3',variable=var,value=3,command=sel)
+R3.pack(anchor=W)
+label=Label(root)
+label.pack()
+root.mainloop()
+
+
+
+#scroll Bar
+from tkinter import *
+root=Tk()
+scrollbar=Scrollbar(root)
+scrollbar.pack(side=RIGHT,fill=Y)
+mylist = Listbox(root,yscrollcommand=scrollbar.set)
+for line in range(100):
+    mylist.insert(END,'this is line number'+str(line))
+mylist.pack(side=LEFT,fill=BOTH)
+scrollbar.config(command=mylist.yview)
+root.mainloop()
+
+
+
+#Button Function
+from tkinter import *
+root=Tk()
+frame=Frame(root)
+frame.pack()
+bottomframe=Frame(root)
+bottomframe.pack(side=BOTTOM)
+red=Button(frame,text='Red',fg='red')
+red.pack(side=LEFT)
+green=Button(frame,text='Green',fg='red')
+green.pack(side=LEFT)
+blue=Button(frame,text='Blue',fg='blue')
+blue.pack(side=LEFT)
+black=Button(frame,text='Black',fg='black')
+black.pack(side=BOTTOM)
+root.mainloop()
+
+
+#Menu
+from tkinter import *
+root=Tk()
+menu=Menu(root)
+root.config(menu=menu)
+filemenu=Menu(menu)
+menu.add_cascade(label='File',menu=filemenu)
+filemenu.add_command(label='New')
+filemenu.add_command(label='Open')
+filemenu.add_separator()
+filemenu.add_command(label='Exit',command=root.quit)
+helpmenu=Menu(menu)
+menu.add_cascade(label='Help',menu=helpmenu)
+helpmenu.add_command(label='About')
+mainloop()
+
+
+#write a program to show a canvas with Firstname, lastname as textbox.city as list.vihicle as checkbox.Gender as radio button. 
+#There will be one save button and one refresh button
+
+from tkinter import *
+import tkinter
+master= Tk()
+Label(master,text='first name').grid(row=0)
+Label(master,text='last name').grid(row=1)
+e1=Entry(master)
+e2=Entry(master)
+e1.grid(row=0,column=1)
+e2.grid(row=1,column=1)
+Label(master,text='City').grid(row=2)
+Lb=Listbox(master)
+Lb.insert(1,'Mirganj')
+Lb.insert(2,'Gopalganj')
+Lb.insert(3,'Varanasi')
+Lb.insert(4,'Delhi')
+Lb.insert(5,'Kota')
+Lb.insert(6,'Kolkata')
+Lb.grid(row=3,column=1)
+Label(master,text='Vehicle').grid(row=4)
+CheckVar1=IntVar()
+C1=Checkbutton(master,text='Car',variable=CheckVar1).grid(row=5,sticky=W,column=1)
+CheckVar2=IntVar()
+C2=Checkbutton(master,text='Bike',variable=CheckVar2).grid(row=5,sticky=W,column=2)
+Label(master,text='Gender').grid(row=6)
+var=IntVar()
+Radiobutton(master,text='Male',variable=var,value=1).grid(row=7,column=1)
+Radiobutton(master,text='Female',variable=var,value=2).grid(row=7,column=2)
+save=Button(master,text='Save',fg='Black')
+save.grid(row=8,column=1)
+refresh=Button(master,text='Refresh',fg='Black')
+refresh.grid(row=8,column=2)
+mainloop()
+
+
+#Label properties
+
+lb=label(top,text='Hello',font=('Arial Bold'),50)
+
+#Button Properties
+btn=Button(top,text='Click',bg='yellow',fg='black')
+
+#Button click event
+def clicked():
+    lb.configure(text='clicked')
+btn=Button(top,text='Click',bg='yellow',fg='black',command=clicked)
+
+#Bext Box properties
+e1=Entry(top,width=20)
+
+#Button Click Event regarding Text Box
+def clicked():
+    lb.configure(text='clicked')
+btn=Button(top,text='Click',bg='yellow',fg='black',command=clicked)
+
+
+
+
+from tkinter import *
+master=Tk()
+master.title('test')
+lb=Label(master,text='Hello')
+lb.grid(column=0,row=1)
+e1=Entry(master,width=20)
+e1.grid(column=0,row=2)
+def clicked():
+    lb.configure(text='clicked')
+btn=Button(master,text='Click',command=clicked)
+btn.grid(row=3,column=0)
+mainloop()
+
+
+
+from tkinter import *
+master=Tk()
+master.title('test')
+lb=Label(master,text='Hello')
+lb.grid(column=0,row=1)
+e1=Entry(master,width=20)
+e1.grid(column=0,row=2)
+def clicked():
+    r='Welcome '+e1.get()
+    lb.configure(text=r)
+btn=Button(master,text='Click',command=clicked)
+btn.grid(row=3,column=0)
+mainloop()
+
+
+
+#combo box
+from tkinter import *
+from tkinter.ttk import *
+master=Tk()
+master.title('test')
+combo=Combobox(master)
+combo['values']=(1,10,20,30,40,'text')
+combo.current(1)
+combo.grid(row=0,column=0)
+w=Spinbox(master,from_=0,to=10)
+w.grid(row=1,column=0)
+mainloop()
+
+
+#spin box
+from tkinter import *
+from tkinter.ttk import *
+master=Tk()
+master.title('test')
+w=Spinbox(master,from_=0,to=10)
+w.grid(row=1,column=0)
+mainloop()
+
+
+
+#popup window
+from tkinter import *
+from tkinter import messagebox
+master=Tk()
+master.title('popup window')
+def clicked():
+    messagebox.showinfo('title','message information')
+btn=Button(master,text='Click',command=clicked)
+btn.pack()
+mainloop()
+
+
+#popup window
+from tkinter import *
+from tkinter import messagebox
+master=Tk()
+master.title('popup window')
+def click1():
+    messagebox.showinfo('title','message information')
+btn1=Button(master,text='Click',command=click1)
+btn1.grid(row=0,column=1)
+def click2():
+    messagebox.showwarning('warning','beware')
+btn2=Button(master,text='Click',command=click2)
+btn2.grid(row=1,column=1)
+def click3():
+    messagebox.showerror('error','wrong')
+btn3=Button(master,text='Click',command=click3)
+btn3.grid(row=2,column=1)
+mainloop()
+
+
+from tkinter import *
+from tkinter import messagebox
+master=Tk()
+master.title('popup window')
+res=messagebox.askquestion('1','what is C')
+res=messagebox.askyesno('ans','yes/no')
+res=messagebox.askyesnocancel('ans','Choice')
+res=messagebox.askokcancel('2','Nope')
+res=messagebox.askretrycancel('0','try')
+mainloop()
+
+
+#progressbar
+from tkinter import *
+from tkinter.ttk import Progressbar
+from tkinter import ttk
+master=Tk()
+master.title('Progress Bar')
+bar=Progressbar(master,length=300,style='black.Horizontal.TProgressbar')
+bar['value']=70
+bar.grid(row=0,column=1)
+mainloop()
+
+create a program to show a chessboard of 4*4 houses
+
+from tkinter import *
+master=Tk()
+master.title('Chessboard')
+for i in range(4):
+    for j in range(4):
+        if(i+j)%2==0:
+            Button(master,width=30,height=12,bg='black').grid(row=i,column=j)
+        else:
+            Button(master,width=30,height=12,bg='white').grid(row=i,column=j)
+mainloop()
+
+
+
+import xlwt
+from xlwt import Workbook
+wb=Workbook()
+sheet1=wb.add_sheet('sheet1')
+sheet1.write(1,0,'ISBT DEHRADUN')
+sheet1.write(2,0,'SHASTRADHARA')
+sheet1.write(3,0,'CLEMEN TOWN')
+sheet1.write(4,0,'RAJPUR ROAD')
+sheet1.write(5,0,'CLOCK TOWER')
+sheet1.write(0,1,'ISBT DEHRADUN')
+sheet1.write(0,2,'SHASTRADHARA')
+sheet1.write(0,3,'CLEMEN TOWN')
+sheet1.write(0,4,'RAJPUR ROAD')
+sheet1.write(0,5,'CLOCK TOWER')
+wb.save('xlwt example.xls')
+
+
+
+file=open('testfile.txt','w')
+file.write('Hello world\n')
+file.write('Hello world\n')
+file.write('Hello world\n')
+file.write('Hello world\n')
+file.write('Hello world\n')
+file.write('Hello world\n')
+file.close()
+
+
+file=open('testfile.txt','r')
+print(file.read())
+file=open('testfile.txt','r')
+print(file.read(4))
+print(file.readline(3))
+o/p
+
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+
+Hello w
+orl
+
+file=open('testfile.txt','r')
+for line in file:
+    print(line)
+
+o/p
+
+Hello world
+
+Hello world
+
+Hello world
+
+Hello world
+
+Hello world
+
+Hello world
+
+
+#Regular Expression
+import re
+line='cats are smarter than dogs'
+matchObj=re.match(r'(.*) are (.*) .*', line,re.M|re.I)
+if matchObj:
+    print('matchObj.group() : ', matchObj.group())
+    print('matchObj.group(1) : ', matchObj.group(1))    
+    print('matchObj.group(2) : ', matchObj.group(2)) 
+else:
+    print('No Match!!')
+searchObj=re.search(r'(.*) are (.*) .*', line,re.M|re.I)
+if searchObj:
+    print('searchObj.group() : ', searchObj.group())
+    print('searchObj.group(1) : ', searchObj.group(1))    
+    print('searchObj.group(2) : ', searchObj.group(2)) 
+else:
+    print('Nothing Found!!')
+o/p
+
+matchObj.group() :  cats are smarter than dogs
+matchObj.group(1) :  cats
+matchObj.group(2) :  smarter than
+searchObj.group() :  cats are smarter than dogs
+searchObj.group(1) :  cats
+searchObj.group(2) :  smarter than
+
+ 

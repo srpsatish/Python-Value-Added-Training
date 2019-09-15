@@ -1,0 +1,278 @@
+011235
+
+dict={1:'a',2:'b',3:'c'}
+dict1={k*2:v for(k,v) in dict.items()}
+o/p= {2: 'a', 4: 'b', 6: 'c'}
+
+numbers=range(10)
+d1={n:n**2 for n in numbers if n%2==0}
+d1
+{0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
+
+farenhite={t1:-30,t2:-20,t3:-10,t4:0}
+celsius={k:(float(5)/9)*(v-32) for(k,v) in farenhite.items()}
+celsius
+{'t1': -34.44444444444444, 't2': -28.88888888888889, 't3': -23.333333333333336, 't4': -17.77777777777778}
+
+
+
+create a dictionary from the following where the values will be 
+greater than 2 and divisible by both 2 and 3
+
+d1={'a':1,'b':2,'c':3,'d':4,'e':5,'f':6,'g':7,'h':9,'i':12}
+d2={k:v for(k,v) in d1.items() if v>2 if v%2==0 if v%3==0}
+d2
+{'f': 6, 'i': 12}
+
+
+clear()  remove all items
+copy()   return shallow copy
+fromkeys() create dictionary from given sequence
+get()   return value of the key
+items()   return key value pair
+keys()  return keys
+values()   return values
+popitem()   returns and removes element
+setdefault()   inserts key with the value if key is not present
+update()   updates
+any()    checks if any element is true
+
+
+convert list into dictionary
+
+keys1=[]
+values1=[]
+count=5
+for i in range(0,count):
+	e=input()
+	keys1.append(e)
+for i in range(0,count):
+	e=input()
+	values1.append(e)
+d1=dict(zip(keys1,values1))
+print(d1)
+
+#####
+
+keys1=[]
+values1=[]
+c=int(input('Enter length of the dictionary\n'))
+for i in range(0,c):
+    e=input('Enter key element\n')
+    keys1.append(e)
+    f=input('Enter value element\n')
+    values1.append(f)
+d1=dict(zip(keys1,values1))
+print(d1)
+
+	LIST MANIPULATION
+name='IT'
+print('Hello,%s!'%name)
+Hello,IT!
+
+ name='john'
+age=23
+print('%s is %d years old'%(nmae,age))
+john is 23 years old
+
+mylist=[1,2,3]
+>>> print('a list:%s'%mylist[0])
+a list:1
+
+st='Hello world'
+>>> print("single quates are ''")
+single quates are ''
+>>> len(st)
+11
+>>> st.index('w')
+6
+>>> st.count('i')
+0
+>>> st[3:7]
+'lo w'
+>>> st[2:7:2]
+'low'
+>>> st[::-1]
+'dlrow olleH'
+>>> st.upper()
+'HELLO WORLD'
+>>> st.lower()
+'hello world'
+>>> st.startswith('H')
+True
+>>> st.endswith('s')
+False
+>>> st.endswith('ld')
+True
+
+
+
+
+count=0
+while(count<5):
+    print(count)
+    count+=1
+else:
+    print('count value reaches%d'%count)
+o/p
+0
+1
+2
+3
+4
+count value reaches5
+
+
+
+row=['']*3
+row
+['', '', '']
+
+
+row=['']*3
+table=[row]*3
+for row in table:
+    print(row)
+o/p
+['', '', '']
+['', '', '']
+['', '', '']
+
+
+
+row=['']*3
+table=[row]*3
+table[2][2]='X'
+for row in table:
+    print(row)
+o/p
+['', '', 'X']
+['', '', 'X']
+['', '', 'X']
+
+
+def fun(a,b):
+    print('function',a,b)
+fun(2,3)
+o/p
+function 2 3
+
+
+def fun(a,b,c=5):
+    print('function',a,b,c)
+fun(2,3)
+o/p
+function 2 3 5
+
+def add(a,b):
+    print('addition of %d and %d is %d.'%(a,b,a+b))
+add(2,3)
+o/p
+addition of 2 and 3 is 5.
+
+
+###write a function to calculate factorial of a number.the number will be 
+given through argument from user
+
+def fact(a):
+    f=1
+    for i in range(1,a+1):
+        f=f*i
+    print(f)
+fact(5)
+
+
+###write a function to multiply all the numbers in a list
+
+
+
+
+###write a fuction to convert all vowels to uppercase
+
+srt=input()
+y=str
+vowels='aeiou'
+for vowel in vowels:
+	y=y.replace(vowel, vowel.upper())
+print(y)
+
+
+##***##   	ARBITRARY FUNCTION
+def arbitrary(x,y,*more):
+	print('x=', x, ', y=', y)
+	print('arbitrary: ', more)
+arbitrary(3,4)
+o/p
+x= 3 , y= 4
+arbitrary:  ()
+
+
+def arbitrary(x,y,*more):
+	print('x=', x, ', y=', y)
+	print('arbitrary: ', more)
+arbitrary(3,4,'hello bdfliuhbds')
+o/p
+x= 3 , y= 4
+arbitrary:  ('hello bdfliuhbds',)
+
+
+import time
+>>> import datetime
+>>> print('year',datetime.date.today().strftime('%Y'))
+year 2019
+>>> print('month',datetime.date.today().strftime('%B'))
+month August
+>>> print('day of year',datetime.date.today().strftime('%j'))
+day of year 231
+>>> print('day of month',datetime.date.today().strftime('%d'))
+day of month 19
+>>> print('day of week',datetime.date.today().strftime('%A'))
+day of week Monday
+
+
+import time
+>>> import datetime
+>>> dateobj=datetime.date.today().strftime('%m %d %Y %I:%M %p')
+>>> print(dateobj)
+08 19 2019 12:00 AM
+
+import datetime
+print(datetime.datetime.now().time())
+o/p
+15:45:24.470506
+
+
+
+###Take input from user and give output of a float type addition 
+in a single statement
+
+print('The sum is %.lf'%(float(input('Enter first number:'))+float(input('Enter second number'))))
+
+####Switch case, program make a simple calculator that can add, subtract, 
+multiply, and divide using function
+
+def add():
+    print('The sum is %.lf'%(float(input('Enter first number:'))+float(input('Enter second number'))))
+def sub():
+    print('The difference is %.lf'%(float(input('Enter first number:'))-float(input('Enter second number'))))
+def multi():
+    print('The product is %.lf'%(float(input('Enter first number:'))*float(input('Enter second number'))))
+def div():
+    print('The quotient is %.lf'%(float(input('Enter first number:'))/float(input('Enter second number'))))
+while True:
+    n=input('Enter\n1 for addition\n2 for subtraction\n3 for multiplication\n4 for division\nAny key for othe options\n')
+    if n=='1':
+        add()
+    elif n=='2':
+        sub()
+    elif n=='3':
+        multi()
+    elif n=='4':
+        div()  
+    else:
+        c=0
+        c=input('Enter e to exit\nAny key to continue\n')
+        if c=='E':
+            break
+        else:
+            continue
