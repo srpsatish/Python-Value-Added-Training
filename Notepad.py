@@ -1,3 +1,8 @@
+'''
+Python Program for making a notepad from tkinter library.
+'''
+
+
 from tkinter import *
 from tkinter.messagebox import showinfo
 from tkinter.filedialog import askopenfilename, asksaveasfilename
